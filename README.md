@@ -14,16 +14,16 @@ https://learn.microsoft.com/zh-tw/previous-versions/troubleshoot/microsoft-365/m
 setup.exe /configure configuration.xml  
 
 6.setup.exe  
-Office Deployment Tool
+Office Deployment Tool  
 
-Setup [mode] [path]
-
-Setup /download [path to configuration file]
-Setup /configure [path to configuration file]
-Setup /customize [path to configuration file]
-Setup /help
-
- /download Downloads files to create an Office installation source
- /configure Adds, removes, or configures an Office installation
- /customize Applies settings for Office applications
- /help Displays this message
+Setup [mode] [path]  
+  
+Setup /download [path to configuration file]  
+Setup /configure [path to configuration file]  
+Setup /customize [path to configuration file]  
+Setup /help  
+  
+ /download Downloads files to create an Office installation source  
+ /configure Adds, removes, or configures an Office installation  
+ /customize Applies settings for Office applications  
+ /help Displays this message  
