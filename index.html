@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Office Deployment XML Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Office deployment helper</p>
+          <h1>Build a friendly configure.xml</h1>
+          <p class="lead">
+            Choose your Office options below and generate an XML file for the Office Deployment Tool.
+            The form uses the repository CSV files as the source of truth for supported versions, products, editions, and channels.
+          </p>
+        </div>
+        <div class="card tips">
+          <h2>Quick start</h2>
+          <ul>
+            <li>Pick a version and product</li>
+            <li>Select the edition and channel</li>
+            <li>Generate and download the XML</li>
+          </ul>
+        </div>
+      </header>
+
+      <section class="card form-card">
+        <form id="configForm">
+          <div class="grid">
+            <label>
+              <span>Version</span>
+              <select id="versionSelect"></select>
+            </label>
+
+            <label>
+              <span>Product</span>
+              <select id="productSelect"></select>
+            </label>
+
+            <label>
+              <span>Edition</span>
+              <select id="editionSelect"></select>
+            </label>
+
+            <label>
+              <span>Channel</span>
+              <select id="channelSelect"></select>
+            </label>
+
+            <label>
+              <span>Architecture</span>
+              <select id="archSelect">
+                <option value="64">64-bit</option>
+                <option value="32">32-bit</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Language</span>
+              <select id="languageSelect">
+                <option value="en-us">English (US)</option>
+                <option value="zh-tw">Chinese (Traditional)</option>
+                <option value="ja-jp">Japanese</option>
+                <option value="de-de">German</option>
+                <option value="fr-fr">French</option>
+              </select>
+            </label>
+
+            <label class="wide">
+              <span>Products to include (Ctrl/Cmd to select multiple)</span>
+              <select id="bundleSelect" multiple size="10"></select>
+            </label>
+
+            <label class="wide">
+              <span>Per-product PID map (optional)</span>
+              <textarea id="pidMapInput" placeholder="Standard2019Volume=6NWWJ-YQWMR-QKGCB-6TMB3-9D9HK\nVisioStdXVolume=NY48V-PPYYH-3F4PX-XJRKJ-W4423\nProjectStdXVolume=D8NRQ-JTYM3-7J2DX-646CT-6836M"></textarea>
+            </label>
+
+            <label class="wide">
+              <span>Exclude apps (optional)</span>
+              <input id="excludeAppsInput" type="text" placeholder="Groove,Lync" />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="generateBtn">Generate XML</button>
+            <button type="button" id="downloadBtn" class="secondary">Download XML</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card output-card">
+        <div class="summary" id="summary"></div>
+        <textarea id="xmlOutput" spellcheck="false"></textarea>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
