@@ -1,3 +1,4 @@
+'''this project use copilot ai coding assiast and github codespace'''
 1.the office installation file name setup.exe and download from this website  
 https://www.microsoft.com/en-us/download/details.aspx?id=49117
 
