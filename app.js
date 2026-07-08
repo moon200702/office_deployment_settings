@@ -15,10 +15,15 @@ const xmlOutput = document.getElementById('xmlOutput');
 
 async function init() {
   try {
-    const [productCsv, channelCsv] = await Promise.all([
-      fetch('office_product_id.csv').then((response) => response.text()),
-      fetch('office_channel.csv').then((response) => response.text())
-    ]);
+    const embeddedProductCsv = document.getElementById('product-csv')?.textContent?.trim();
+    const embeddedChannelCsv = document.getElementById('channel-csv')?.textContent?.trim();
+
+    const [productCsv, channelCsv] = embeddedProductCsv && embeddedChannelCsv
+      ? [embeddedProductCsv, embeddedChannelCsv]
+      : await Promise.all([
+          fetch('office_product_id.csv').then((response) => response.text()),
+          fetch('office_channel.csv').then((response) => response.text())
+        ]);
 
     productRows = parseCsv(productCsv);
     channelRows = parseCsv(channelCsv);
